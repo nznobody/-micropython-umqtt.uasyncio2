@@ -42,6 +42,11 @@ asyncio.run(run())
 ## Development State
 This repository is a work-in-progress (WIP). As such there are still outstanding known and unknown bugs.
 
+### Roadmap
+It would be great to see:
+* Robust connection handling, similar to `robust2`. This is not as simple as changing calls to to use `await` since it will require implementation and use of asyncio queues.
+* Testing on other Micropython hardware
+
 ### Check issues and PRs on micropython-umqtt.simple2
 As this repository is directly derived from micropython-umqtt.simple2 (referred to as *upstream*), it is worth checking their issues or PRs as this repo may diverge.
 
