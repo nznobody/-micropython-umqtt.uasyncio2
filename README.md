@@ -1,6 +1,9 @@
 # micropython-umqtt.uasyncio2
 umqtt.uasyncio2 is an asyncio MQTT client for MicroPython. It is derived from [micropython-umqtt.simple2](https://github.com/fizista/micropython-umqtt.simple2) (and in future micropython-umqtt.robust2) and a lot of credit goes to the original author.
 
+## Requirements
+* Base asyncio library: https://github.com/micropython/micropython/tree/master/extmod/uasyncio
+
 ## Usage Example
 ```python
 import uasyncio as asyncio
