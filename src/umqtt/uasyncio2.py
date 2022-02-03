@@ -126,6 +126,11 @@ class MQTTClient:
         # Todo: handle expections
         self.async_stream.write(bytes_wr)
         await self.async_stream.drain()
+        # Potential bug. Even when drain returns, occasionally the socket doesn't appear
+        # to send the underlying bytes. This could be due to it not being in blocking mode
+        # (see read bug) and this causing issues.
+        # For now add an extra sleep to allow time possibly for socket to send async.
+        await asyncio.sleep_ms(10)  # Somehow the messages are not getting sent always
         log.debug("async write for '{}' bytes completed".format(bytes_wr))
         return len(bytes_wr)
 
